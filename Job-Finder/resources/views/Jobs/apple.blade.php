@@ -36,7 +36,7 @@
  </div>
  <main class="d-flex align-items-center justify-content-center p-5">
  
- <form method="post" action="{{ route('Jobs.store') }}">
+ <form method="post" action="{{ route('Jobs.store') }}"  enctype="multipart/form-data">
     @csrf
     <div class="mb-3 row">
         @if ($errors->any())
@@ -92,8 +92,8 @@
         </div>
         <label for="cv" class="col-md-2 col-form-label">Upload Your CV:</label>
         <div class="col-md-4">
-            <input type="file" class="form-control" id="cv" aria-describedby="inputGroupFileAddon04" name="cv_file_path"
-                aria-label="Upload">
+        <input type="file" class="form-control" id="cv_file_path" name="cv_file_path"
+                accept=".pdf, .doc,.docx"/>
         </div>
     </div>
     <div class="mb-5 row">

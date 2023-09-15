@@ -43,7 +43,7 @@
       <h5 class="card-title" style="font-size: 24px; font-weight: bold; color: #333;">{{$job->job_title}}</h5>
        <p class="card-text" style="font-size: 18px; color: #666;">{{$job->job_des}}</p>
        <h6 style="font-size: 20px; color: green;">Salary: ${{$job->salary}} per year</h6>      
-       <a href="{{ route('Jobs.apple', ['id' => $job->id]) }}" class="btn btn-primary">Go somewhere</a>
+       <a href="{{ route('Jobs.apple', ['id' => $job->id]) }}" class="btn btn-primary">Apply Now</a>
     </div>
     </div>
   </div>

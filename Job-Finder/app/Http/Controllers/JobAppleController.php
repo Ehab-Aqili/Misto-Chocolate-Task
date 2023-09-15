@@ -16,21 +16,29 @@ class JobAppleController extends Controller
           return abort(404, "Job Not Found");
       }
     }
-    public function store(Request $request){
-      // dd($request);
+    public function store(Request $request)
+  {
+    // dd($fileName);
+    $fileName = time().$request->file('cv_file_path')->getClientOriginalName();
+     
+    $request->file('cv_file_path')->storeAs(
+    'cv-file', $fileName
+  );
+
       $data = $request->validate([
         'full_name' => 'required|max:255',
         'address' => 'required',
-        'gender' => 'required',
+        'gender' => 'required',  
         'age' => 'required',
         'contact_info' => 'required|email',
         'years_exp' => 'required|numeric',
         'edu_info'  => 'required',
         'more_info' => 'required',
-        'cv_file_path'=> 'required',
         'job_id'  => 'required' 
       ]);
+      $data['cv_file_path'] = $fileName;
       JobApple::create($data);
       return redirect(route('Jobs.index'));
-    }
+  
+  }
 }
