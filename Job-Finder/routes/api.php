@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\JobAppleController;
+use App\Http\Controllers\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -23,3 +25,6 @@ Route::get('users/{id}', [UserController::class, 'show']);
 Route::post('add-user', [UserController::class, 'store']);
 Route::put('user-update/{id}', [UserController::class, 'update']);
 Route::delete('user-delete/{id}', [UserController::class, 'destroy']);
+
+Route::post('submit-application',[JobAppleController::class, 'storeEndPont']);
+Route::get('job-listing',[JobController::class, 'getAllJobs']);

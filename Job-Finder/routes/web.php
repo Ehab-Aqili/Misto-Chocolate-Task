@@ -20,5 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/job-listings', [JobController::class, 'index'])->name('Jobs.index');
-Route::get('/job-apple/{id}', [JobAppleController::class, 'create'])->name('Jobs.apple'); 
-Route::post('/job-apple', [JobAppleController::class, 'store'])->name('Jobs.store'); 
+Route::get('/job-apply/{id}', [JobAppleController::class, 'create'])->name('Jobs.apple'); 
+Route::post('/job-applied', [JobAppleController::class, 'store'])->name('Jobs.store'); 

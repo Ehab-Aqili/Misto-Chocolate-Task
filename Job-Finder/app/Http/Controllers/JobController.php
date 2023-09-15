@@ -14,4 +14,11 @@ class JobController extends Controller
     
         return view('Jobs.index', compact('jobs'));
     }
+    public function getAllJobs()
+    {
+        $jobs = Job::all();
+        return response()->json([
+            'results' => $jobs
+        ], 200);
+    }
 }
